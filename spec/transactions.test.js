@@ -1,10 +1,16 @@
-const Transactions = require("../app/transaction");
+const Transactions = require("../app/transactions");
 
 describe("Transactions", () => {
   // Use beforeEach for repeated actions
 
   describe("push transactions as key/value pairs to array with amount and date", () => {
-    it("#deposit adds deposit transactions", () => {
+    it("#list returns default message before any transacitons ", () => {
+      const transactions = new Transactions();
+
+      expect(transactions.list()).toEqual("No transactions yet.");
+    });
+
+    it("#deposit pushes positive transaction(s) to array; #list returns array of transactions", () => {
       const transactions = new Transactions();
 
       expect(transactions.list()).toEqual("No transactions yet.");
