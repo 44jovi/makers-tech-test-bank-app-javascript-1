@@ -3,7 +3,7 @@ class Balance {
     this.currentBalance = 0.0;
   }
 
-  current() {
+  getCurrentBalance() {
     return this.currentBalance;
   }
 }

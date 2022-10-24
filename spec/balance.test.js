@@ -5,11 +5,9 @@ beforeEach(() => {
 });
 
 describe("Balance", () => {
-  describe("#getBalance returns a bank account's current balance", () => {
+  describe("#current returns a bank account's current balance", () => {
     it("default balance before any transactions", () => {
-      expect(balance.current()).toEqual(0.0);
+      expect(balance.getCurrentBalance()).toEqual(0.0);
     });
-
-    // Add tests for invalid input
   });
 });
