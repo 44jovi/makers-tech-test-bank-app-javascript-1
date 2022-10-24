@@ -25,8 +25,9 @@ describe("Transactions", () => {
     it("#withdraw pushes negative transaction(s) to array; #list returns array of transactions", () => {
       expect(transactions.list()).toEqual("No transactions yet.");
 
-      transactions.withdraw("01/01/2022", -1.0);
-      transactions.withdraw("02/01/2022", -2.0);
+      // Withdrawl amount to be input as positive number (float)
+      transactions.withdraw("01/01/2022", 1.0);
+      transactions.withdraw("02/01/2022", 2.0);
 
       expect(transactions.list()).toEqual([
         { "01/01/2022": -1.0 },

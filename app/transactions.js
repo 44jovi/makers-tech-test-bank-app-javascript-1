@@ -18,7 +18,8 @@ class Transactions {
 
   withdraw(date, amount) {
     const transaction = {};
-    transaction[date] = amount;
+    // Convert amount from positive to negative
+    transaction[date] = -Math.abs(amount);
     this.transactionsList.push(transaction);
   }
 }
