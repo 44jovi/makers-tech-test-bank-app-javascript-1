@@ -3,8 +3,12 @@ class Balance {
     this.currentBalance = 0.0;
   }
 
-  getCurrentBalance() {
+  get() {
     return this.currentBalance;
+  }
+
+  update(amount) {
+    this.currentBalance += amount;
   }
 }
 
