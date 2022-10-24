@@ -7,7 +7,6 @@ class Transactions {
     if (this.transactionsList.length === 0) {
       return "No transactions yet.";
     }
-    console.log("Current transactions: " + this.transactionsList);
     return this.transactionsList;
   }
 

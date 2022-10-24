@@ -1,16 +1,16 @@
 const Transactions = require("../app/transactions");
 
+beforeEach(() => {
+  transactions = new Transactions();
+});
+
 describe("Transactions", () => {
   describe("push transactions as key/value pairs to array with amount and date", () => {
     it("#list returns default message before any transacitons ", () => {
-      const transactions = new Transactions();
-
       expect(transactions.list()).toEqual("No transactions yet.");
     });
 
     it("#deposit pushes positive transaction(s) to array; #list returns array of transactions", () => {
-      const transactions = new Transactions();
-
       expect(transactions.list()).toEqual("No transactions yet.");
 
       transactions.deposit("01/01/2022", 1.0);
@@ -23,8 +23,6 @@ describe("Transactions", () => {
     });
 
     it("#withdraw pushes negative transaction(s) to array; #list returns array of transactions", () => {
-      const transactions = new Transactions();
-
       expect(transactions.list()).toEqual("No transactions yet.");
 
       transactions.withdraw("01/01/2022", -1.0);
@@ -35,5 +33,7 @@ describe("Transactions", () => {
         { "02/01/2022": -2.0 },
       ]);
     });
+
+    // Add tests for invalid input
   });
 });
