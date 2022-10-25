@@ -1,7 +1,7 @@
 class Transactions {
   constructor(balance) {
     this.transactionsList = [];
-    this.balance = balance.get();
+    this.balance = balance;
   }
 
   list() {
@@ -28,7 +28,7 @@ class Transactions {
       transactionDetails["debit"] = Math.abs(transaction);
     }
 
-    transactionDetails["accBalance"] = this.balance;
+    transactionDetails["accBalance"] = this.balance.get();
 
     this.transactionsList.push(transactionDetails);
   }
