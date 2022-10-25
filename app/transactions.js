@@ -1,6 +1,7 @@
 class Transactions {
-  constructor() {
+  constructor(balance) {
     this.transactionsList = [];
+    this.balance = balance.get();
   }
 
   list() {
@@ -15,6 +16,7 @@ class Transactions {
     const transactionDetails = {};
     transactionDetails["transacDate"] = date;
     transactionDetails["transacAmount"] = transaction;
+    transactionDetails["accBalance"] = this.balance;
     this.transactionsList.push(transactionDetails);
   }
 }
