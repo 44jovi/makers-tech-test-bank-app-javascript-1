@@ -11,14 +11,12 @@ class Transactions {
     return this.transactionsList;
   }
 
-  // Include balance
   add(date, transaction) {
     const transactionDetails = {};
 
     transactionDetails["transacDate"] = date;
 
     // If transaction is positive (deposit)
-    // add in logic for if value is 0??
     if (Math.sign(transaction) === 1) {
       transactionDetails["credit"] = transaction;
       transactionDetails["debit"] = 0.0;

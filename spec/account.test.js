@@ -14,7 +14,7 @@ beforeEach(() => {
 describe("Account", () => {
   describe("deposit()", () => {
     it("each execution adds an amount to account balance", () => {
-      // For now mimic the instance variable `this.currentBalance` in the Balance class
+      // Manual mock of `this.currentBalance` in the Balance class
       let mockCurrentBalance = 0.0;
 
       mockBalance.update.mockImplementation((amount) => {
@@ -31,7 +31,7 @@ describe("Account", () => {
 
   describe("withdraw()", () => {
     it("each execution subtracts an amount from account balance", () => {
-      // For now mimic the instance variable `this.currentBalance` in the Balance class
+      // Manual mock of `this.currentBalance` in the Balance class
       let mockCurrentBalance = 0.0;
 
       mockBalance.update.mockImplementation((amount) => {

@@ -19,7 +19,8 @@ class Account {
   printStatement() {
     let statement = this.statementHeader;
 
-    // WIP: Fix Prettier extension auto-formatting here
+    // WIP: Fix Prettier auto-formatting here
+    // Fix number outputs to 2 decimal places
     this.transactionsList.forEach((transaction) => {
       statement += `\n${
         transaction.transacDate
