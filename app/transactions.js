@@ -9,19 +9,6 @@ class Transactions {
     }
     return this.transactionsList;
   }
-
-  deposit(date, amount) {
-    const transaction = {};
-    transaction[date] = amount;
-    this.transactionsList.push(transaction);
-  }
-
-  withdraw(date, amount) {
-    const transaction = {};
-    // Convert amount from positive to negative
-    transaction[date] = -Math.abs(amount);
-    this.transactionsList.push(transaction);
-  }
 }
 
 module.exports = Transactions;
