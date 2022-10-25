@@ -19,7 +19,7 @@ class Account {
       amount = -Math.abs(amount);
     }
     // If amount is negative or zero, leave it unchanged
-    else if (Math.sign(amount) === -1) {
+    else {
       amount = amount;
     }
 

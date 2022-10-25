@@ -22,7 +22,7 @@ class Transactions {
       transactionDetails["debit"] = 0.0;
     }
     // Otherwise if transaction is negative (withdrawl)
-    else if (Math.sign(transaction) === -1) {
+    else {
       transactionDetails["credit"] = 0.0;
       // Convert transaction value back into positive number
       transactionDetails["debit"] = Math.abs(transaction);

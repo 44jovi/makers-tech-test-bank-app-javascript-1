@@ -27,6 +27,20 @@ describe("Account", () => {
       account.deposit(2.0);
       expect(mockCurrentBalance).toEqual(3.0);
     });
+    it("deposit amount zero does not change balance", () => {
+      // Manual mock of `this.currentBalance` in the Balance class
+      let mockCurrentBalance = 0.0;
+
+      mockBalance.update.mockImplementation((amount) => {
+        mockCurrentBalance += amount;
+      });
+
+      expect(mockCurrentBalance).toEqual(0.0);
+      account.deposit(1.0);
+      expect(mockCurrentBalance).toEqual(1.0);
+      account.deposit(0.0);
+      expect(mockCurrentBalance).toEqual(1.0);
+    });
   });
 
   describe("withdraw()", () => {
@@ -43,6 +57,34 @@ describe("Account", () => {
       expect(mockCurrentBalance).toEqual(-1.0);
       account.withdraw(2.0);
       expect(mockCurrentBalance).toEqual(-3.0);
+    });
+    it("account balance updates correctly regardless of negative or positive input", () => {
+      // Manual mock of `this.currentBalance` in the Balance class
+      let mockCurrentBalance = 0.0;
+
+      mockBalance.update.mockImplementation((amount) => {
+        mockCurrentBalance += amount;
+      });
+
+      expect(mockCurrentBalance).toEqual(0.0);
+      account.withdraw(-1.0);
+      expect(mockCurrentBalance).toEqual(-1.0);
+      account.withdraw(-2.0);
+      expect(mockCurrentBalance).toEqual(-3.0);
+    });
+    it("withdrawl amount zero does not change balance", () => {
+      // Manual mock of `this.currentBalance` in the Balance class
+      let mockCurrentBalance = 0.0;
+
+      mockBalance.update.mockImplementation((amount) => {
+        mockCurrentBalance += amount;
+      });
+
+      expect(mockCurrentBalance).toEqual(0.0);
+      account.deposit(1.0);
+      expect(mockCurrentBalance).toEqual(1.0);
+      account.withdraw(0.0);
+      expect(mockCurrentBalance).toEqual(1.0);
     });
   });
 
