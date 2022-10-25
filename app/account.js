@@ -1,6 +1,8 @@
 class Account {
-  constructor(balance) {
+  constructor(balance, transactions) {
     this.balance = balance;
+    this.transactionsList = transactions.list();
+    this.statementHeader = "date || credit || debit || balance";
   }
 
   // Deposit amount must be input as a positive number (float)
@@ -12,6 +14,21 @@ class Account {
   withdraw(amount) {
     // Convert amount into negative float
     this.balance.update(-Math.abs(amount));
+  }
+
+  printStatement() {
+    let statement = this.statementHeader;
+
+    // WIP: Fix Prettier extension auto-formatting here
+    this.transactionsList.forEach((transaction) => {
+      statement += `\n${
+        transaction.transacDate
+      } || ${transaction.credit.toFixed(2)} || ${transaction.debit.toFixed(
+        2
+      )} || ${transaction.accBalance.toFixed(2)}`;
+    });
+
+    return statement;
   }
 }
 
