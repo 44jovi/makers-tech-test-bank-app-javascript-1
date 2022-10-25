@@ -9,6 +9,13 @@ class Transactions {
     }
     return this.transactionsList;
   }
+
+  // Include balance
+  add(date, transaction) {
+    const transactionDetails = {};
+    transactionDetails[date] = transaction;
+    this.transactionsList.push(transactionDetails);
+  }
 }
 
 module.exports = Transactions;
