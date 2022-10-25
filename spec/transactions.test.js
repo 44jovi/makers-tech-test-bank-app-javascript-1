@@ -18,29 +18,29 @@ describe("Transactions", () => {
 
       // Transaction 1 (deposit)
       const date1 = "01/01/2022";
-      const transaction1 = 1.0;
+      const transaction1 = 1.1;
       transactions.add(date1, transaction1);
 
       // Transaction 2 (deposit)
       const date2 = "02/01/2022";
-      const transaction2 = 2.0;
+      const transaction2 = 2.2;
       transactions.add(date2, transaction2);
 
-      // Transaction 3 (withdraw)
+      // Transaction 3 (withdrawl)
       const date3 = "03/01/2022";
-      const transaction3 = -1.0;
-      mockBalance.get.mockImplementation(() => 2.0);
+      const transaction3 = -3.3;
       transactions.add(date3, transaction3);
 
       expect(transactions.list()).toEqual([
-        // accBalance value is hard-coded as 0.0 as part of the mockBalance
-        { transacDate: "01/01/2022", transacAmount: 1.0, accBalance: 0.0 },
-        { transacDate: "02/01/2022", transacAmount: 2.0, accBalance: 0.0 },
-        { transacDate: "03/01/2022", transacAmount: -1.0, accBalance: 0.0 },
+        // `accBalance` has a mock value, hard-coded as `0.0`
+        // Only asserting that add() correctly calls on instance variable `this.balance`
+        { transacDate: "01/01/2022", credit: 1.1, debit: 0.0, accBalance: 0.0 },
+        { transacDate: "02/01/2022", credit: 2.2, debit: 0.0, accBalance: 0.0 },
+        { transacDate: "03/01/2022", credit: 0.0, debit: 3.3, accBalance: 0.0 },
       ]);
     });
 
-    // Add tests for invalid input
+    // Add tests for invalid input / error throws
   });
   describe("list() returns array of transactions", () => {
     it("default message before any transactions", () => {
@@ -51,6 +51,6 @@ describe("Transactions", () => {
       expect(transactions.list()).toEqual("No transactions yet.");
     });
 
-    // Add tests for invalid input
+    // Add tests for invalid input / error throws
   });
 });

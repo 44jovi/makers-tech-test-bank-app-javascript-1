@@ -14,9 +14,24 @@ class Transactions {
   // Include balance
   add(date, transaction) {
     const transactionDetails = {};
+
     transactionDetails["transacDate"] = date;
-    transactionDetails["transacAmount"] = transaction;
+
+    // If transaction is positive (deposit)
+    // add in logic for if value is 0??
+    if (Math.sign(transaction) === 1) {
+      transactionDetails["credit"] = transaction;
+      transactionDetails["debit"] = 0.0;
+    }
+    // Otherwise if transaction is negative (withdrawl)
+    else if (Math.sign(transaction) === -1) {
+      transactionDetails["credit"] = 0.0;
+      // Convert transaction value back into positive number
+      transactionDetails["debit"] = Math.abs(transaction);
+    }
+
     transactionDetails["accBalance"] = this.balance;
+
     this.transactionsList.push(transactionDetails);
   }
 }
