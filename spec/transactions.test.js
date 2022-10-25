@@ -16,7 +16,9 @@ describe("Transactions", () => {
 
       transactions.add(date, transaction);
 
-      expect(transactions.list()).toEqual([{ "01/01/2022": 1.0 }]);
+      expect(transactions.list()).toEqual([
+        { transacDate: "01/01/2022", transacAmount: 1.0 },
+      ]);
 
       // Return balance
     });

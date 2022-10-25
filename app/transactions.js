@@ -13,7 +13,8 @@ class Transactions {
   // Include balance
   add(date, transaction) {
     const transactionDetails = {};
-    transactionDetails[date] = transaction;
+    transactionDetails["transacDate"] = date;
+    transactionDetails["transacAmount"] = transaction;
     this.transactionsList.push(transactionDetails);
   }
 }
