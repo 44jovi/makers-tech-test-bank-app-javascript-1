@@ -1,6 +1,6 @@
-const Account = require("../../app/account");
-const Balance = require("../../app/balance");
-const Transactions = require("../../app/transactions");
+const Account = require("./app/account");
+const Balance = require("./app/balance");
+const Transactions = require("./app/transactions");
 
 const balance = new Balance();
 const transactions = new Transactions(balance);
