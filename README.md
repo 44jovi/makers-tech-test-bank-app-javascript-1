@@ -10,15 +10,46 @@ This small project is a tech test focused on evaluating OOD and TDD skills.
 - Node.js
 - Jest
 
-## Demo
-
-```
-node spec/test-scripts/script.js
-```
-
 ## Test Coverage
 
 ![Screenshot](/spec/test-coverage/test-coverage-221026-1.png)
+
+## Design / Planning
+
+![Screenshot](/design/class-diagram-2.png)
+
+## Getting Started
+
+If you'd like to run the project please follow the instructions below.
+
+### Prerequisites
+
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/44jovi/makers-tech-test-bank-app-javascript-1.git
+   ```
+2. Install NPM packages/dependencies
+   ```sh
+   npm install
+   ```
+3. Run tests
+
+   ```sh
+    npx jest
+   ```
+
+4. To run the demo
+
+   ```sh
+    node app.js
+   ```
 
 ## Original instructions
 
