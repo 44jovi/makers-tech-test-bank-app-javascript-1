@@ -1,8 +1,30 @@
 # Tech Test - Bank App
 
+## About
+
 This small project is a tech test focused on evaluating OOD and TDD skills.
 
+## Language / Tools
+
+- JavaScript
+- Node.js
+- Jest
+
+## Demo
+
+```
+node spec/test-scripts/script.js
+```
+
+## Test Coverage
+
+![Screenshot](/spec/test-coverage/test-coverage-221026-1.png)
+
+## Original instructions
+
 Below are the original instructions.
+
+<br>
 
 # Bank tech test
 
