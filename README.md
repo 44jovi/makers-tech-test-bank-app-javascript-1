@@ -16,6 +16,11 @@ This small project is a tech test focused on evaluating OOD and TDD skills.
 
 ## Design / Planning
 
+Previous versions of the following diagram can be found here:
+
+```sh
+/design/archive
+```
 ![Screenshot](/design/class-diagram-2.png)
 
 ## Getting Started
