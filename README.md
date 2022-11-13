@@ -21,6 +21,7 @@ Previous versions of the following diagram can be found here:
 ```sh
 /design/archive
 ```
+
 ![Screenshot](/design/class-diagram-2.png)
 
 ## Getting Started
@@ -47,7 +48,7 @@ If you'd like to run the project please follow the instructions below.
 3. Run tests
 
    ```sh
-    npx jest
+    npm jest
    ```
 
 4. To run the demo
