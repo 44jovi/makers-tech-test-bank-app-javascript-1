@@ -48,7 +48,7 @@ If you'd like to run the project please follow the instructions below.
 3. Run tests
 
    ```sh
-    npm jest
+    npm test
    ```
 
 4. To run the demo
